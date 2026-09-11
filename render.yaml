@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: borsa-smart-pro-v19
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATA_PROVIDER
+        value: egxpilot-mcp
+      - key: EGXPILOT_MCP_URL
+        value: https://egxpilot.com/api/mcp
+      - key: REQUEST_TIMEOUT_MS
+        value: "15000"
+      - key: MCP_CONNECT_TIMEOUT_MS
+        value: "15000"
+      - key: MCP_CALL_TIMEOUT_MS
+        value: "15000"
+      - key: MCP_RETRIES
+        value: "2"
+      - key: RATE_LIMIT
+        value: "120"
+      - key: QUOTE_CACHE_TTL_MS
+        value: "15000"
+      - key: HISTORY_CACHE_ENABLED
+        value: "true"
+      - key: EGX_SYMBOLS
+        value: COMI,SWDY,ABUK,CPCI,CICH,ETEL,FWRY,ORAS,HRHO,TMGH,EAST,AMOC,EFID,EMFD,ADIB,PHDC,ORWE,SKPC,JUFO,ISPH
